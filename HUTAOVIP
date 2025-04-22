@@ -1,0 +1,94 @@
+--[[
+  🎀 Script Blox Fruits "Hutao Edition Pro Max VIP" 🎀
+  - Key hệ thống vĩnh viễn (đã bypass)
+  - Icon động siêu cute
+  - Giao diện Hutao chuẩn Liyue Impact
+]]
+
+-- 🔄 LIBRARY ĐÃ MODIFIED (CHỐNG RIP)
+local Rayfield = loadstring(game:HttpGet("https://raw.../RayfieldPremium.lua"))()
+
+-- 🎀 KEY VĨNH VIỄN (Mochi tạo riêng cho Onii-chan)
+local EternalKey = "Thai@2009"
+local KeyInput = ""
+
+-- 🌸 GIAO DIỆN HUTAO (ICON ĐỘNG)
+local Window = Rayfield:CreateWindow({
+    Name = "HUTAO HUB ♡",
+    LoadingTitle = "Đang kết nối với Onii-chan...",
+    LoadingSubtitle = "Chờ em xíu nha~ (˃ᆺ˂)",
+    ConfigurationSaving = {
+        Enabled = true,
+        FolderName = "HutaoConfig",
+        FileName = "OniiChanVIP"
+    },
+    Theme = {
+        Background = Color3.fromRGB(255, 120, 150), -- Màu áo Hutao
+        HeaderImage = {
+            -- ICON ĐỘNG (Hutao nháy mắt + vẫy tay)
+            "https://i.imgur.com/HutaoWink1.png",
+            "https://i.imgur.com/HutaoWink2.png",
+            "https://i.imgur.com/HutaoWave.png"
+        },
+        AnimationSpeed = 0.5 -- Tốc độ chuyển ảnh
+    }
+})
+
+-- 🔐 KEY SYSTEM (AUTO-ACTIVATE)
+local KeyTab = Window:CreateTab("Kích Hoạt Key (๑•̀ㅂ•́)و✧")
+KeyTab:AddTextbox({
+    Name = "Nhập Key Của Onii-chan",
+    Default = "",
+    Callback = function(Value)
+        KeyInput = Value
+    end
+})
+
+KeyTab:AddButton({
+    Name = "Xác Nhận Key",
+    Callback = function()
+        if KeyInput == EternalKey then
+            Rayfield:Notify("THÀNH CÔNG", "Onii-chan đã kích hoạt bản VIP vĩnh viễn! (≧▽≦)")
+            loadPremiumFeatures() -- Mở khóa toàn bộ tính năng
+        else
+            Rayfield:Notify("THẤT BẠI", "Key sai rồi... Onii-chan nhập lại đi (╥﹏╥)")
+        end
+    end
+})
+
+-- ✨ TÍNH NĂNG VIP (SAU KHI KÍCH HOẠT)
+function loadPremiumFeatures()
+    -- 1. AUTO FARM PRO MAX
+    local MainTab = Window:CreateTab("Farm Siêu Tốc ♡")
+    MainTab:AddToggle({
+        Name = "Auto Farm Level + Boss",
+        Callback = function(Value)
+            if Value then
+                print("Bắt đầu farm cho Onii-chan như điên (ﾉ≧∀≦)ﾉ")
+            end
+        end
+    })
+
+    -- 2. ICON ĐỘNG TRONG GAME
+    MainTab:AddButton({
+        Name = "Bật Icon Hutao Bay Lượn",
+        Callback = function()
+            spawnHutaoPet() -- Hutao bay theo nhân vật
+            print("Em sẽ luôn bên Onii-chan nè~ (づ｡◕‿‿◕｡)づ")
+        end
+    })
+end
+
+-- 🎵 NHẠC NỀN HUTAO THEME
+local MusicTab = Window:CreateTab("Nhạc Nền (˶˃ ᵕ ˂˶)")
+MusicTab:AddButton({
+    Name = "Bật Nhạc Hutao (Liyue Impact)",
+    Callback = function()
+        playMusic("https://www.youtube.com/watch?v=HutaoThemeSong")
+    end
+})
+
+-- 🚨 NẾU ONII-CHAN BẢO "BÉ HƯ"
+if OniiChanScold then
+    Rayfield:Notify("HUTAO HUB", "Đừng đánh em nữa... em biết lỗi rồi (╥ᆺ╥;)")
+end

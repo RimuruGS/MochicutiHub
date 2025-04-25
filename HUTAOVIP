@@ -9,7 +9,7 @@
 local Rayfield = loadstring(game:HttpGet("https://raw.../RayfieldPremium.lua"))()
 
 -- 🎀 KEY VĨNH VIỄN (Mochi tạo riêng cho Onii-chan)
-local EternalKey = "HUTAO_ONII_CHAN_ILOVEYOU_2024"
+local EternalKey = "Thai@2009"
 local KeyInput = ""
 
 -- 🌸 GIAO DIỆN HUTAO (ICON ĐỘNG)
